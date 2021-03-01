@@ -1,0 +1,33 @@
+CREATE TABLE accounts (
+	id serial PRIMARY KEY,
+	username VARCHAR ( 50 ) UNIQUE NOT NULL,
+	password VARCHAR ( 50 ) NOT NULL,
+	email VARCHAR ( 255 ) UNIQUE NOT NULL,
+	role VARCHAR ( 50 ) NOT NULL
+);
+CREATE TABLE product (
+	id serial PRIMARY KEY,
+	nom VARCHAR ( 50 ) NOT NULL,
+	description VARCHAR ( 50 ) NOT NULL,
+	quantite INT ,
+	prix INT
+	image VARCHAR ( 255 ) NOT NULL
+);
+
+INSERT INTO public.accounts(
+	id, username, password, email, role)
+	VALUES (1, 'admin', 123, 'admin@gmail.com','Administrateur');
+SELECT id, username, password, email, role
+	FROM public.accounts;
+INSERT INTO public.accounts(
+	id, username, password, email, role)
+	VALUES (2, 'user', 123, 'user@gmail.com', 'Client');
+
+
+SELECT id, nom, description, quantite, prix, image FROM public.product WHERE id=
+SELECT nom FROM product WHERE nom LIKE ?
+INSERT INTO public.product(\r\n" + 
+					"	nom, description, quantite, prix, image)\r\n" + 
+					"	VALUES (?, ?, ?, ?, ?, ?)
+
+UPDATE public.product SET nom=?, description=?, quantite=?, prix=?, image=? WHERE id = ?
